@@ -1,4 +1,5 @@
 const msal = require('@azure/msal-node');
+const config = require('./config')
 
 /**
  * Configuration object to be passed to MSAL instance on creation. 
@@ -7,9 +8,9 @@ const msal = require('@azure/msal-node');
  */
 const msalConfig = {
 	auth: {
-		clientId: process.env.CLIENT_ID,
-		authority: process.env.AAD_ENDPOINT + process.env.TENANT_ID,
-		clientSecret: process.env.CLIENT_SECRET,
+		clientId: config.CLIENT_ID,
+		authority: config.AAD_ENDPOINT + config.TENANT_ID,
+		clientSecret: config.CLIENT_SECRET,
 	}
 };
 
@@ -19,11 +20,11 @@ const msalConfig = {
  * https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow 
  */
 const tokenRequest = {
-	scopes: [process.env.GRAPH_ENDPOINT + '.default'], // e.g. 'https://graph.microsoft.com/.default'
+	scopes: [config.GRAPH_ENDPOINT + '.default'], // e.g. 'https://graph.microsoft.com/.default'
 };
 
 const apiConfig = {
-	uri: process.env.GRAPH_ENDPOINT + 'v1.0/users', // e.g. 'https://graph.microsoft.com/v1.0/users'
+	uri: config.GRAPH_ENDPOINT + 'v1.0/users', // e.g. 'https://graph.microsoft.com/v1.0/users'
 };
 
 /**
