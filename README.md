@@ -9,7 +9,7 @@ Run command
 `node . --op getUsers`
 
 Expected output looks like:
-
+```
 You have selected: getUsers
 request made to web API at: Wed Jan 04 2023 12:39:55 GMT+0200 (Eastern European Standard Time)
 {
@@ -29,3 +29,4 @@ request made to web API at: Wed Jan 04 2023 12:39:55 GMT+0200 (Eastern European 
         id: '00cbfda8-d67c-4307-8fcf-f821ab75b99e'
     }
 }
+```
